@@ -11,10 +11,7 @@ import (
 
 func (server *Server) handleSignUp(responseWriter http.ResponseWriter, request *http.Request) {
 	conn := server.newConnection(utils.Post, "/signup")
-	var signedUpUser dbutils.User
-	if err := json.NewDecoder(request.Body).Decode(&signedUpUser); err != nil {
-		fmt.Println("Oops Something Went Wrong!")
-	}
+	signedUpUser := dbutils.User{Username: request.FormValue("username"), Password: request.FormValue("password")}
 	byteArr, _ := json.Marshal(signedUpUser)
 	conn.Request.Body = string(byteArr)
 	responseWriter.Header().Set("Content-Type", "application/json")
