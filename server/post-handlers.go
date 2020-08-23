@@ -1,7 +1,7 @@
 package server
 
 import (
-	dbutils "Go-Server/Model/utils"
+	dbutils "Go-Server/model/utils"
 	"Go-Server/server/utils"
 	"encoding/json"
 	"fmt"

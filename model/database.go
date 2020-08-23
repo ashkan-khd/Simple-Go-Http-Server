@@ -1,7 +1,7 @@
-package Model
+package model
 
 import (
-	"Go-Server/Model/utils"
+	"Go-Server/model/utils"
 	"encoding/json"
 	"io/ioutil"
 	"os"

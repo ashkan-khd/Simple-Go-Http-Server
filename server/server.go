@@ -1,7 +1,7 @@
 package server
 
 import (
-	"Go-Server/Model"
+	"Go-Server/model"
 	"Go-Server/server/utils"
 	"fmt"
 	"github.com/gorilla/mux"
@@ -13,14 +13,14 @@ type Server struct {
 	isHelpMode  bool
 	connections []*utils.Connection
 	router      *mux.Router
-	jdb         *Model.JsonDatabase
+	jdb         *model.JsonDatabase
 }
 
 func (server *Server) Run(isHelpMode bool) {
 	server.isHelpMode = isHelpMode
 	server.port = ":8008"
 	server.router = mux.NewRouter()
-	server.jdb = Model.InitDatabase()
+	server.jdb = model.InitDatabase()
 	server.run()
 }
 
